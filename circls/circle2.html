@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Spining</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            width:100%;
+            height:100vh;
+            background: #000;
+        }
+
+        .loadded{
+            width:75px;
+            height:75px;
+            border-radius: 50%;
+        }
+        
+        .circle{
+            width:75px;
+            box-shadow: 0 0 10px red;
+            border:3px so-lid red;
+            height:75px;
+            border-radius: 50%;
+            position: relative;
+            animation: animate 2s linear infinite;
+        }
+
+        .circle::before{
+            content: "";
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: red;
+            border-radius: 50%;
+            box-shadow: 0 0 10px red;
+        
+        }
+
+        @keyframes animate{
+            from{
+                transform: rotate(0);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loadded">
+        <div class="circle">
+
+        </div>
+    </div>
+</body>
+</html>

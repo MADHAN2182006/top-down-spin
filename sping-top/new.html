@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circles Follow Cursor</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .box {
+            position: relative;
+            height: 90%;
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .circle {
+            position: absolute;
+            width: calc(var(--i) * 2.5vmin);
+            aspect-ratio: 1;
+            border: 2px solid rgb(219, 11, 80);
+            border-radius: 50%;
+            animation: animate 5s calc(var(--i) * 0.08s) ease-in-out infinite;
+            pointer-events: none; /* Prevents circles from interfering with cursor interaction */
+            transition: transform 0.1s ease-out; /* Smooth transition */
+        }
+
+        @keyframes animate {
+            0%, 100% {
+                transform: rotateX(70deg) translateY(50px) translateY(0);
+                filter: hue-rotate(0);
+            }
+
+            50% {
+                transform: rotateX(70deg) translateY(50px) translateY(50vmin);
+                filter: hue-rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <!-- Circles with custom style for each one -->
+        <div class="circle" style="--i:0"></div>
+        <div class="circle" style="--i:1"></div>
+        <div class="circle" style="--i:2"></div>
+        <div class="circle" style="--i:3"></div>
+        <div class="circle" style="--i:4"></div>
+        <div class="circle" style="--i:5"></div>
+        <div class="circle" style="--i:6"></div>
+        <div class="circle" style="--i:7"></div>
+        <div class="circle" style="--i:8"></div>
+        <div class="circle" style="--i:9"></div>
+    </div>
+
+    <script>
+        // Store the current mouse position
+        let cursorX = 0;
+        let cursorY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            cursorX = e.clientX;
+            cursorY = e.clientY;
+        });
+
+        // Function to move the circles towards the mouse
+        function moveCircles() {
+            const circles = document.querySelectorAll('.circle');
+
+            circles.forEach((circle, index) => {
+                const circleSize = parseFloat(getComputedStyle(circle).width);
+                const offset = (circleSize / 2) + (index * 10); // Offset circles a bit
+
+                // Calculate position for each circle to follow the mouse
+                const xPosition = cursorX - offset;
+                const yPosition = cursorY - offset;
+
+                // Apply the transform to each circle with transition
+                circle.style.transform = `rotateX(70deg) translate3d(${xPosition}px, ${yPosition}px, 0)`;
+            });
+
+            requestAnimationFrame(moveCircles); // Keep moving the circles
+        }
+
+        // Start the animation loop
+        moveCircles();
+    </script>
+</body>
+</html>

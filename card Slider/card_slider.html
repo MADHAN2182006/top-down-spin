@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google Fonts: Inter and Material Symbols Rounded -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_forward" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Inter", sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(#eceffe, #ced6fb);
+        }
+
+        .card-list {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            gap: 16px;
+            padding: 16px;
+        }
+
+        .card-list::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .card-list::-webkit-scrollbar-thumb {
+            background-color: #5372f0;
+            border-radius: 4px;
+        }
+
+        .card-list .card-item {
+            list-style: none;
+        }
+
+        .card-list .card-item .card-link {
+            width: 400px;
+            display: block;
+            background: #fff;
+            padding: 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            border: 2px solid transparent;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+            transition: 0.2s ease;
+        }
+
+        .card-list .card-item .card-link:hover {
+            border-color: #5372f0;
+        }
+
+        .card-list .card-link .card-image {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .card-list .card-link .badge {
+            color: #5372f0;
+            padding: 8px 16px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin: 16px 0;
+            background: #ddefff;
+            width: fit-content;
+            border-radius: 50px;
+        }
+
+        .card-list .card-link .card-title {
+            font-size: 1.19rem;
+            color: #000;
+            font-weight: 600;
+        }
+
+        .card-list .card-link .card-button {
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+            margin: 30px 0 5px;
+            border: 2px solid #5372f0;
+            cursor: pointer;
+            color: #5372f0;
+            background: none;
+            transform: rotate(-45deg);
+            transition: 0.4s ease;
+        }
+
+        .card-list .card-link:hover .card-button {
+            color: #fff;
+            background: #5372f0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .card-wrapper {
+            display: flex;
+            width: 90vw;
+            max-width: 1200px;
+        }
+    </style>
+
+    <title>Card</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card-wrapper">
+            <ul class="card-list">
+                <li class="card-item">
+                    <a href="#" class="card-link">
+                        <img src="image/One_Piece.webp" alt="Card Image" class="card-image" />
+                        <p class="badge">One Piece</p>
+                        <h2 class="card-title">Lorem ipsum dolor sit explicabo adipisicing elit</h2>
+                        <button class="card-button material-symbols-rounded">arrow_forward</button>
+                    </a>
+                </li>
+                <li class="card-item">
+                    <a href="#" class="card-link">
+                        <img src="image/naruto-image.jpg" alt="Card Image" class="card-image" />
+                        <p class="badge">Naruto</p>
+                        <h2 class="card-title">Lorem ipsum dolor sit explicabo adipisicing elit</h2>
+                        <button class="card-button material-symbols-rounded">arrow_forward</button>
+                    </a>
+                </li>
+                <li class="card-item">
+                    <a href="#" class="card-link">
+                        <img src="image/AOT-image.jpg" alt="Card Image" class="card-image" />
+                        <p class="badge">Attack on Titan</p>
+                        <h2 class="card-title">Lorem ipsum dolor sit explicabo adipisicing elit</h2>
+                        <button class="card-button material-symbols-rounded">arrow_forward</button>
+                    </a>
+                </li>
+                <li class="card-item">
+                    <a href="#" class="card-link">
+                        <img src="image/bleach-image.jpg" alt="Card Image" class="card-image" />
+                        <p class="badge">Bleach</p>
+                        <h2 class="card-title">Lorem ipsum dolor sit explicabo adipisicing elit</h2>
+                        <button class="card-button material-symbols-rounded">arrow_forward</button>
+                    </a>
+                </li>
+                <li class="card-item">
+                    <a href="#" class="card-link">
+                        <img src="image/demon-slayer.jpg" alt="Card Image" class="card-image" />
+                        <p class="badge">Demon Slayer</p>
+                        <h2 class="card-title">Lorem ipsum dolor sit explicabo adipisicing elit</h2>
+                        <button class="card-button material-symbols-rounded">arrow_forward</button>
+                    </a>
+                </li>
+                <li class="card-item">
+                    <a href="#" class="card-link">
+                        <img src="image/dragon-boll-image.jpg" alt="Card Image" class="card-image" />
+                        <p class="badge">Dragon Boll</p>
+                        <h2 class="card-title">Lorem ipsum dolor sit explicabo adipisicing elit</h2>
+                        <button class="card-button material-symbols-rounded">arrow_forward</button>
+                    </a>
+                </li>
+                <li class="card-item">
+                    <a href="#" class="card-link">
+                        <img src="image/jujutsu-kaisen.jpg" alt="Card Image" class="card-image" />
+                        <p class="badge">jujutsu Kaisen</p>
+                        <h2 class="card-title">Lorem ipsum dolor sit explicabo adipisicing elit</h2>
+                        <button class="card-button material-symbols-rounded">arrow_forward</button>
+                    </a>
+                </li>
+                <li class="card-item">
+                    <a href="#" class="card-link">
+                        <img src="image/solo-leveling.jpg" alt="Card Image" class="card-image" />
+                        <p class="badge">solo leavling</p>
+                        <h2 class="card-title">Lorem ipsum dolor sit explicabo adipisicing elit</h2>
+                        <button class="card-button material-symbols-rounded">arrow_forward</button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const cardList = document.querySelector('.card-list');
+
+        cardList.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            cardList.scrollLeft += e.deltaY;
+        });
+    </script>
+</body>
+
+</html>
